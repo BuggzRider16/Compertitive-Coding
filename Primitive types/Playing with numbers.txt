@@ -1,0 +1,38 @@
+-) Number system and base conversions -> https://www.geeksforgeeks.org/number-system-and-base-conversions/?ref=lbp
+-) 1's and 2's complement -> https://www.geeksforgeeks.org/1s-2s-complement-binary-number/?ref=lbp
+-) Logs -> https://www.geeksforgeeks.org/logarithm-questions/
+
+D    B    O   HD
+0   0000
+1   0001
+2   0010
+3   0011
+4   0100
+5   0101
+6   0110
+7   0111
+8   1000
+9   1001
+10  1010
+11  1011
+12  1100
+13  1101
+14  1110
+15  1111
+
+
+-) Shifing opperation
+    -) a << b = a · 2b
+    -) a >> b = a / 2b = a · 2-b (dropping any decimals)
+
+-) Modulus
+    -) If numerator is smaller than denominator answer will always be numerator
+    -) Max mod result always end up to denominator - 1 for a given operation.
+
+-) & operator
+    -) x & 1 is used to check wheather last bit of x is 1 or not
+        Ex -> 10(1010) & 1 = 0
+              11(1011) & 1 = 1
+
+-) ^ (XOR) operator
+    -) 

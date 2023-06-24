@@ -33,8 +33,8 @@ const approach3 = (num) => {
 const approach4 = (n) => {
   let binaryString = ""
   for (i = n; i >= 0; i--) {
-    var k = n >> i;
-    if (k & 1)
+    var k = n >> i; 
+    if (k & 1) // checking last bit
       binaryString += "1"
     else
       binaryString += "0"
