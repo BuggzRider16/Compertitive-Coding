@@ -1,0 +1,7 @@
+-) Important points about array
+    -) If x is the address where array is stored and y is the size of array element, then
+       array elements address will be x, x+y, x+2y, x+3y .....N.
+    -) Array provide Ramdon access.
+    -) Array is the only one DS which is cache friendly, meaning when reading a particular array element 
+       CPU generally prefetches the near items items and stores them in cache to provide faster
+       operations.

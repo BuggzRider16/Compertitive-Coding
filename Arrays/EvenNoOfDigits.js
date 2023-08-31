@@ -41,9 +41,13 @@ var findNumbersMy = function (nums) {
     }
     return evenDigitCount
 }
-// Optimised my
-var findNumbersOptimised = function (nums) {
-    return nums.filter(num => (num + '').length % 2 == 0).length;
+// Optimised my 
+var findNumbers = function (nums) {
+    return nums.reduce((count, num) => {
+        if (`${num}`.length % 2 === 0)
+            return count = count + 1
+        return count
+    }, 0)
 };
 
 //Perfect solution for this Question to this range
