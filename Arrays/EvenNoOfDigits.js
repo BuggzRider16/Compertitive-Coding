@@ -45,7 +45,7 @@ var findNumbersMy = function (nums) {
 var findNumbers = function (nums) {
     return nums.reduce((count, num) => {
         if (`${num}`.length % 2 === 0)
-            return count = count + 1
+            return count++
         return count
     }, 0)
 };
