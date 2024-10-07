@@ -14,6 +14,20 @@ const removeDuplicates = (arr) => {
   }
   return i + 1
 }
+
+var removeDuplicates2 = function(nums) {
+  let k = 0
+  if (arr.length === 1) {
+    return 1
+  }
+  for (let i = 0; i< nums.length; i++){
+      if(nums[i]!==nums[i+1]){
+          nums[k+1] = nums[i+1]
+          k++
+      }
+  }
+  return k
+};
 const inputArray = [2, 2, 2, 2, 2]
 console.log(`Size: ${removeDuplicates(inputArray)}`, inputArray)
 

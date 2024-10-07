@@ -36,30 +36,35 @@ var duplicateZeros = function (arr) {
 
 
 //test
-var duplicateZerosTest = function (arr) {
-    let countZero = 0;
-    for (let i = 0; i < arr.length; ++i) {
+var duplicateZerosTest = function(arr) {
+    let zeroes = 0;
+    
+    // Count the number of zeros in the array
+    for (let i = 0; i < arr.length; i++) {
         if (arr[i] === 0) {
-            countZero++;
+            zeroes++;
         }
     }
+    
     let i = arr.length - 1;
-    let j = arr.length - 1 + countZero;
-    while (i > -1) {
-        if (j < arr.length) {
-            arr[j] = arr[i];
-        }
-
+    let j = arr.length + zeroes - 1;
+    
+    // Process the array from the end to the start
+    while (i !== j) {
+        insert(arr, i, j--);
         if (arr[i] === 0) {
-            j--;
-            if (j < arr.length) {
-                arr[j] = arr[i];
-            }
+            insert(arr, i, j--);
         }
-        j--;
         i--;
     }
+};
+
+function insert(arr, i, j) {
+    if (j < arr.length) {
+        arr[j] = arr[i];
+    }
 }
+
 const main = () => {
     // const arr = prompt('Enter numbers , seperated to be sorted \n').split(',')
     let arr = [1, 0, 2, 3, 0, 4, 5, 0]
