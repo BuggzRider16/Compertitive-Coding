@@ -1,29 +1,17 @@
 var removeElement = function (nums, val) {
-    let newLength = 0
-    let j = nums.length - 1
-    if(!(nums.length === 1 && nums[0]===val)){
-        for (let i = 0; i <= j; i++) {
-        if(i>j){
-            break
-        }
-        if (nums[i] === val) {
-            if (nums[j] === val)
-                j--
-            let temp = nums[i]
+    let i = 0
+    for (let j = 0; j < nums.length; j++) {
+        if (nums[j] !== val) {
             nums[i] = nums[j]
-            nums[j] = temp
-            j--
+            i++
         }
-        newLength = i+1
     }
-    }
-    
-    return newLength
+    return i
 };
 
 const main = () => {
-    const nums = [3, 2, 2, 3]
-    const ans = removeElement(nums, 3)
+    const nums = [0, 1, 2, 2, 3, 0, 4, 2]
+    const ans = removeElement(nums, 2)
     console.log("Answer is", ans)
 }
 
