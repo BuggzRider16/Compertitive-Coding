@@ -1,28 +1,19 @@
-var longestCommonPrefix = function (strs) {
-    let lCP = ''
-    let firstString = strs[0]
-
+var longestCommonPrefix1 = function (strs) {
+    let minLength = Infinity, largestPrefix = "", firstString = strs[0]
     if (firstString.length === 0)
-        return lCP
-    
-    for (let i = 0; i < firstString.length; i++) {
-        let commonPrefix = ''
-        let j
-        for (j = 0; j < strs.length; j++) {
-            if (strs[j][i] === firstString[i]) {
-                commonPrefix = firstString[i]
-            }
-            else {
-                commonPrefix = ''
-                break
+        return largestPrefix
+    for (let i = 0; i < strs.length; i++) {
+        minLength = Math.min(minLength, strs[i].length)
+    }
+    for (let i = 0; i < minLength; i++) {
+        for (let j = 1; j < strs.length; j++) {
+            if (strs[j][i] !== firstString[i]) {
+                return largestPrefix
             }
         }
-        if (j === strs.length)
-            lCP += commonPrefix
-        else
-        break
+        largestPrefix += firstString[i]
     }
-    return lCP
+    return largestPrefix
 };
 
-console.log(longestCommonPrefix(["a"]))
+console.log(longestCommonPrefix1(["a"]))
