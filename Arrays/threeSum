@@ -1,0 +1,31 @@
+/*
+    Write a function that takes in a non-empty array of distinct integers and an integer representing a target sum. 
+    The function should find all triplets in the array that sum up to the target sum and return a two-dimensional array of all these triplets.
+    The numbers in each triplet should be ordered in ascending order, and the triplets themselves should be ordered in ascending order with respect to the numbers they hold.
+    If no three numbers sum up to the target sum, the function should return an empty array.
+*/
+
+function threeNumberSum(array, targetSum) {
+    const result = []
+    const sortedArray = array.sort((a, b) => a - b)
+    for (let i = 0; i < sortedArray.length - 2; i++) {  // we are doing sortedArray.length - 2 because we need atleast 3 numbers to get a sum i.e. i, left and right.
+        let left = i + 1, right = sortedArray.length - 1
+        while (left < right) {
+            const sum = sortedArray[i] + sortedArray[left] + sortedArray[right]
+            if (sum === targetSum) {
+                result.push([sortedArray[i], sortedArray[left], sortedArray[right]])
+                left++
+                right--  
+                // we are doing left++ and right-- because we know if we only do left++ or right-- it will give a
+                // number which is either a number which is greater then target or less then target respectively.
+                // So we need to move both left and right to get a new number which can be a possible answer.
+            } else if (sum > targetSum)
+                right--
+            else if (sum < targetSum)
+                left++
+        }
+    }
+    return result
+}
+
+console.log(threeNumberSum([12, 3, 1, 2, -6, 5, -8, 6], 0))
